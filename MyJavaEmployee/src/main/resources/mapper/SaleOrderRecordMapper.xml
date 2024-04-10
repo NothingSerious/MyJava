@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.myjavademo.order.mapper.SaleOrderRecordMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.myjavademo.order.domain.SaleOrderRecord">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="sourceId" column="source_id" jdbcType="VARCHAR"/>
+            <result property="fxSourceId" column="fx_source_id" jdbcType="VARCHAR"/>
+            <result property="fxSourceNo" column="fx_source_no" jdbcType="VARCHAR"/>
+            <result property="clientCode" column="client_code" jdbcType="VARCHAR"/>
+            <result property="clientName" column="client_name" jdbcType="VARCHAR"/>
+            <result property="businessAccountCode" column="business_account_code" jdbcType="VARCHAR"/>
+            <result property="shopCode" column="shop_code" jdbcType="VARCHAR"/>
+            <result property="shopName" column="shop_name" jdbcType="VARCHAR"/>
+            <result property="userMasterId" column="user_master_id" jdbcType="BIGINT"/>
+            <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+            <result property="userPhone" column="user_phone" jdbcType="VARCHAR"/>
+            <result property="position" column="position" jdbcType="VARCHAR"/>
+            <result property="deptSubId" column="dept_sub_id" jdbcType="INTEGER"/>
+            <result property="leaderId" column="leader_id" jdbcType="BIGINT"/>
+            <result property="leaderName" column="leader_name" jdbcType="VARCHAR"/>
+            <result property="leaderPosition" column="leader_position" jdbcType="VARCHAR"/>
+            <result property="orderCreatedAt" column="order_created_at" jdbcType="TIMESTAMP"/>
+            <result property="orderUpdatedAt" column="order_updated_at" jdbcType="TIMESTAMP"/>
+            <result property="orderShippedAt" column="order_shipped_at" jdbcType="TIMESTAMP"/>
+            <result property="policyBookAmount" column="policy_book_amount" jdbcType="DECIMAL"/>
+            <result property="saleAmount" column="sale_amount" jdbcType="DECIMAL"/>
+            <result property="realAmount" column="real_amount" jdbcType="DECIMAL"/>
+            <result property="recordType" column="record_type" jdbcType="TINYINT"/>
+            <result property="accountType" column="account_type" jdbcType="TINYINT"/>
+            <result property="dispatchClientCode" column="dispatch_client_code" jdbcType="VARCHAR"/>
+            <result property="dispatchClientName" column="dispatch_client_name" jdbcType="VARCHAR"/>
+            <result property="materialNumber" column="material_number" jdbcType="VARCHAR"/>
+            <result property="materialName" column="material_name" jdbcType="VARCHAR"/>
+            <result property="materialUnit" column="material_unit" jdbcType="VARCHAR"/>
+            <result property="storeNumerator" column="store_numerator" jdbcType="INTEGER"/>
+            <result property="saleQty" column="sale_qty" jdbcType="INTEGER"/>
+            <result property="baseUnitQty" column="base_unit_qty" jdbcType="INTEGER"/>
+            <result property="salePrice" column="sale_price" jdbcType="DECIMAL"/>
+            <result property="realPrice" column="real_price" jdbcType="DECIMAL"/>
+            <result property="policyBookPrice" column="policy_book_price" jdbcType="DECIMAL"/>
+            <result property="attributeType" column="attribute_type" jdbcType="TINYINT"/>
+            <result property="activityNo" column="activity_no" jdbcType="VARCHAR"/>
+            <result property="activityName" column="activity_name" jdbcType="VARCHAR"/>
+            <result property="activityType" column="activity_type" jdbcType="VARCHAR"/>
+            <result property="categoryName" column="category_name" jdbcType="VARCHAR"/>
+            <result property="categoryCode" column="category_code" jdbcType="VARCHAR"/>
+            <result property="createdAt" column="created_at" jdbcType="TIMESTAMP"/>
+            <result property="updatedAt" column="updated_at" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,source_id,fx_source_id,
+        fx_source_no,client_code,client_name,
+        business_account_code,shop_code,shop_name,
+        user_master_id,user_name,user_phone,
+        position,dept_sub_id,leader_id,
+        leader_name,leader_position,order_created_at,
+        order_updated_at,order_shipped_at,policy_book_amount,
+        sale_amount,real_amount,record_type,
+        account_type,dispatch_client_code,dispatch_client_name,
+        material_number,material_name,material_unit,
+        store_numerator,sale_qty,base_unit_qty,
+        sale_price,real_price,policy_book_price,
+        attribute_type,activity_no,activity_name,
+        activity_type,category_name,category_code,
+        created_at,updated_at
+    </sql>
+</mapper>

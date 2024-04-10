@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.myjavademo.employee.mapper.EmployeeMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.myjavademo.employee.domain.Employee">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="idCardNumber" column="id_card_number" jdbcType="VARCHAR"/>
+            <result property="employeeNo" column="employee_no" jdbcType="VARCHAR"/>
+            <result property="employeeId" column="employee_id" jdbcType="INTEGER"/>
+            <result property="position" column="position" jdbcType="VARCHAR"/>
+            <result property="deptId" column="dept_id" jdbcType="INTEGER"/>
+            <result property="deptCode" column="dept_code" jdbcType="VARCHAR"/>
+            <result property="deptName" column="dept_name" jdbcType="VARCHAR"/>
+            <result property="leaderId" column="leader_id" jdbcType="BIGINT"/>
+            <result property="leaderName" column="leader_name" jdbcType="VARCHAR"/>
+            <result property="dingUserId" column="ding_user_id" jdbcType="VARCHAR"/>
+            <result property="xrxsUserId" column="xrxs_user_id" jdbcType="VARCHAR"/>
+            <result property="xrxsLeaderId" column="xrxs_leader_id" jdbcType="VARCHAR"/>
+            <result property="xrxsPositionId" column="xrxs_position_id" jdbcType="VARCHAR"/>
+            <result property="larkUserId" column="lark_user_id" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="entryDate" column="entry_date" jdbcType="VARCHAR"/>
+            <result property="dismissionDate" column="dismission_date" jdbcType="VARCHAR"/>
+            <result property="lastUpdateTime" column="last_update_time" jdbcType="VARCHAR"/>
+            <result property="hireType" column="hire_type" jdbcType="VARCHAR"/>
+            <result property="corpName" column="corp_name" jdbcType="VARCHAR"/>
+            <result property="jobCode" column="job_code" jdbcType="VARCHAR"/>
+            <result property="deptIdList" column="dept_id_list" jdbcType="VARCHAR"/>
+            <result property="managementForm" column="management_form" jdbcType="VARCHAR"/>
+            <result property="workCity" column="work_city" jdbcType="VARCHAR"/>
+            <result property="userType" column="user_type" jdbcType="TINYINT"/>
+            <result property="month" column="month" jdbcType="VARCHAR"/>
+            <result property="createdAt" column="created_at" jdbcType="TIMESTAMP"/>
+            <result property="updatedAt" column="updated_at" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_id,name,
+        mobile,email,id_card_number,
+        employee_no,employee_id,position,
+        dept_id,dept_code,dept_name,
+        leader_id,leader_name,ding_user_id,
+        xrxs_user_id,xrxs_leader_id,xrxs_position_id,
+        lark_user_id,status,entry_date,
+        dismission_date,last_update_time,hire_type,
+        corp_name,job_code,dept_id_list,
+        management_form,work_city,user_type,
+        month,created_at,updated_at
+    </sql>
+    <select id="selectByIdCardNumberAfter" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from employee
+        where
+        id_card_number > #{idCardNumber,jdbcType=VARCHAR}
+    </select>
+</mapper>

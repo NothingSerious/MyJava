@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace='org.example.myjavademo.department.mapper.DepartmentMapper'>
+
+    <resultMap id="BaseResultMap" type="org.example.myjavademo.department.domain.Department">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="deptId" column="dept_id" jdbcType="INTEGER"/>
+            <result property="deptName" column="dept_name" jdbcType="VARCHAR"/>
+            <result property="deptCode" column="dept_code" jdbcType="VARCHAR"/>
+            <result property="deptLevel" column="dept_level" jdbcType="INTEGER"/>
+            <result property="deptParentId" column="dept_parent_id" jdbcType="INTEGER"/>
+            <result property="xrxsDeptId" column="xrxs_dept_id" jdbcType="VARCHAR"/>
+            <result property="xrxsParentDeptId" column="xrxs_parent_dept_id" jdbcType="VARCHAR"/>
+            <result property="xrxsDeptType" column="xrxs_dept_type" jdbcType="INTEGER"/>
+            <result property="dingDeptId" column="ding_dept_id" jdbcType="VARCHAR"/>
+            <result property="dingParentDeptId" column="ding_parent_dept_id" jdbcType="VARCHAR"/>
+            <result property="larkDeptId" column="lark_dept_id" jdbcType="VARCHAR"/>
+            <result property="larkParentDeptId" column="lark_parent_dept_id" jdbcType="VARCHAR"/>
+            <result property="lastUpdateTime" column="last_update_time" jdbcType="VARCHAR"/>
+            <result property="beCostCenter" column="be_cost_center" jdbcType="TINYINT"/>
+            <result property="beProfitCenter" column="be_profit_center" jdbcType="TINYINT"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="xrxsAdminId" column="xrxs_admin_id" jdbcType="VARCHAR"/>
+            <result property="deptCodePath" column="dept_code_path" jdbcType="VARCHAR"/>
+            <result property="deptLeaderId" column="dept_leader_id" jdbcType="INTEGER"/>
+            <result property="costCenterDeptCode" column="cost_center_dept_code" jdbcType="VARCHAR"/>
+            <result property="profitCenterDeptCode" column="profit_center_dept_code" jdbcType="VARCHAR"/>
+            <result property="costCenterCode" column="cost_center_code" jdbcType="VARCHAR"/>
+            <result property="profitCenterCode" column="profit_center_code" jdbcType="VARCHAR"/>
+            <result property="parentDeptCode" column="parent_dept_code" jdbcType="VARCHAR"/>
+            <result property="kdDeptId" column="kd_dept_id" jdbcType="VARCHAR"/>
+            <result property="kdParentDeptId" column="kd_parent_dept_id" jdbcType="VARCHAR"/>
+            <result property="month" column="month" jdbcType="VARCHAR"/>
+            <result property="createdAt" column="created_at" jdbcType="TIMESTAMP"/>
+            <result property="updatedAt" column="updated_at" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,dept_id,dept_name,
+        dept_code,dept_level,dept_parent_id,
+        xrxs_dept_id,xrxs_parent_dept_id,xrxs_dept_type,
+        ding_dept_id,ding_parent_dept_id,lark_dept_id,
+        lark_parent_dept_id,last_update_time,be_cost_center,
+        be_profit_center,status,xrxs_admin_id,
+        dept_code_path,dept_leader_id,cost_center_dept_code,
+        profit_center_dept_code,cost_center_code,profit_center_code,
+        parent_dept_code,kd_dept_id,kd_parent_dept_id,
+        month,created_at,updated_at
+    </sql>
+</mapper>

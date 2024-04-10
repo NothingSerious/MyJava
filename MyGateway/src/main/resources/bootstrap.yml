@@ -1,0 +1,60 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: my-java-gateway
+  profiles:
+    active: dev
+  cloud:
+#    gateway:
+#      routes:
+#        - id: my-java-manager
+#          uri: http://localhost:8082
+#          predicates:
+#            - Path=/user/**
+#        - id: my-java-employee
+#          uri: http://localhost:8083
+#          predicates:
+#            - Path=/employee/**
+#    sentinel:
+#      transport:
+#        dashboard: http://localhost:9090
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        group: DEFAULT_GROUP
+        file-extension: yml
+        namespace: dev
+        refresh-enabled: true
+      discovery:
+        server-addr: 127.0.0.1:8848
+        group: DEFAULT_GROUP
+        namespace: dev
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: my-java-gateway
+mybatis-plus:
+#  mapper-locations: classpath*:mapper/*.xml
+  global-config:
+    banner: false
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  typeAliasesPackage: org.example.myjavademo.dto
+
+sentinel:
+  enabled: true
+#jwt:
+#  enabled: false
+#  expiration: 3600
+#  header: Authorization
+#  signing: 123456
+#  tokenHead: Bearer
